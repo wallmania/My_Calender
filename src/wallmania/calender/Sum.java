@@ -10,11 +10,8 @@ public class Sum {
 		// input 은 두 수 (키보드로 받는다)
 		System.out.println("두 수를 입력해주세요.");
 		Scanner scanner = new Scanner(System.in);
-		String s1, s2;
-		s1 = scanner.next();
-		s2 = scanner.next();
-		a = Integer.parseInt(s1);
-		b = Integer.parseInt(s2);
+		a = Integer.parseInt(scanner.next());
+		b = Integer.parseInt(scanner.next());
 		
 		// System.out.println("두 수의 합은 " + (a+b) + " 입니다.");
 		System.out.printf("%d + %d = %d", a, b, a + b);
