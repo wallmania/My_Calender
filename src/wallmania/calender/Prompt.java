@@ -31,7 +31,7 @@ public class Prompt {
 				System.out.print("\n" + "month should be less than or equal to 12\n\n");
 				continue;
 			} else {
-				My_Calender.printSampleCalender(year, month);
+				My_Calender.printCalender(year, month);
 				System.out.print("\n\n");
 			}
 		}
