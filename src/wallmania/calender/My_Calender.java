@@ -73,22 +73,18 @@ public class My_Calender {
 	}
 	
 	public static void printCalender(int year, int month) {
-		System.out.printf("\n  <<%4d년 %3d월>>\n", year, month);
+		System.out.printf("\n   <<%4d년 %d월>>\n", year, month);
 		System.out.println("Su Mo Tu We Th Fr Sa");
 		System.out.println("--------------------");
 		
-		// get weekday automatically
+		// Get First Line 
 		int weekday = getWeekDay(year, month, 1);
-		for (int i=1; i<=weekday; i++) {
-			System.out.print("   ");
-		}
-		int maxDay = getMaxDayofMonth(month, year);
-		// get second line 
-		for (int i=1; i<= 7-weekday; i++) {
-			System.out.printf("%2d ", i);
-		}
+		for (int i=1; i<=weekday; i++) { System.out.print("   "); }
+		for (int i=1; i<= 7-weekday; i++) { System.out.printf("%2d ", i); }
 		System.out.print("\n");		
+		
 		// Get 나머지 line
+		int maxDay = getMaxDayofMonth(month, year);
 		for (int i=7-weekday+1; i<= maxDay; i++) {
 			System.out.printf("%2d ", i);
 			if (i % 7 == ((7 - weekday) % 7)) {
