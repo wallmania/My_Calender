@@ -8,8 +8,7 @@ public class Prompt {
 	
 	public void runPrompt() {
 		
-		// 사용하지 못한 이유를 알아야 한다. 
-		// My_Calender cal = new My_Calender();
+		// 사용하지 못한 이유를 알아야 한다. -> My_Calender cal = new My_Calender();
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("\n");
 		
@@ -19,6 +18,12 @@ public class Prompt {
 			System.out.print("year 입력하세요.\n");
 			System.out.print(PROMPT);
 			year = Integer.parseInt(scanner.next());
+			if (year == -1) {
+				break;
+			} else if (year < 1970) {
+				System.out.print("\n" + "year should be greater than or equal to 1970.\n\n");
+				continue;
+			} 
 			System.out.print("month 입력하세요.\n");
 			System.out.print(PROMPT);
 			month = Integer.parseInt(scanner.next());
