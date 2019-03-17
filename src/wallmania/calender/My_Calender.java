@@ -49,6 +49,8 @@ public class My_Calender {
 		int syear = 1970, sweekday = 4; // Thursday (1970.01.01)
 		
 		// Get # of days b/w syear and year
+		// Get # of days b/w 1 and month
+		// Get # of days b/w 1 and day
 		int count = 0;
 		for (int i=syear; i < year; i++) {
 			int delta = 0;
@@ -59,14 +61,10 @@ public class My_Calender {
 			}
 			count += delta;
 		}
-		// Get # of days b/w 1 and month
-		for (int j=1; j < month; j++) {
-			int delta = getMaxDayofMonth(j, year);
-			count += delta;
-		}
-		// Get # of days b/w 1 and day
+		for (int j=1; j < month; j++) { int delta = getMaxDayofMonth(j, year); count += delta;}
 		count += day - 1;
 		
+		// Get weekday
 		int weekday = (sweekday + count % 7) % 7; 
 		
 		return weekday;
@@ -77,13 +75,13 @@ public class My_Calender {
 		System.out.println("Su Mo Tu We Th Fr Sa");
 		System.out.println("--------------------");
 		
-		// Get First Line 
+		// Get 1st line 
 		int weekday = getWeekDay(year, month, 1);
 		for (int i=1; i<=weekday; i++) { System.out.print("   "); }
 		for (int i=1; i<= 7-weekday; i++) { System.out.printf("%2d ", i); }
 		System.out.print("\n");		
 		
-		// Get 나머지 line
+		// Get 2nd ~ Last line
 		int maxDay = getMaxDayofMonth(month, year);
 		for (int i=7-weekday+1; i<= maxDay; i++) {
 			System.out.printf("%2d ", i);
