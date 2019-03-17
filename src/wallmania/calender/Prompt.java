@@ -1,6 +1,7 @@
 package wallmania.calender;
 
 import java.util.Scanner;
+import wallmania.calender.My_Calender;
 
 public class Prompt {
 	
@@ -15,7 +16,7 @@ public class Prompt {
 		int month = 1;
 		int year = 1950;
 		while (true) {
-			System.out.print("year 입력하세요.\n");
+			System.out.print("year 입력하세요. (exit : -1)\n");
 			System.out.print(PROMPT);
 			year = Integer.parseInt(scanner.next());
 			if (year == -1) {
@@ -24,7 +25,7 @@ public class Prompt {
 				System.out.print("\n" + "year should be greater than or equal to 1970.\n\n");
 				continue;
 			} 
-			System.out.print("month 입력하세요.\n");
+			System.out.print("month 입력하세요. (exit : -1)\n");
 			System.out.print(PROMPT);
 			month = Integer.parseInt(scanner.next());
 			if (month == -1) {
