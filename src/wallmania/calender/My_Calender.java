@@ -51,15 +51,19 @@ public class My_Calender {
 		// 입력 받은 월의 최대 일수 구하기.
 
 		printSampleCalender();
-
-		int month;
-		System.out.println("\n");
-		System.out.print("원하는 month를 입력하세요. : ");
 		Scanner scanner = new Scanner(System.in);
-		month = Integer.parseInt(scanner.next());
-
-		System.out.println("");
-		System.out.printf("month : %d, # of days : %d", month, maxDaysofMonth(month));
+		
+		System.out.print("\n" + "원하는 반복회수를 입력하세요. : ");
+		int repeat = Integer.parseInt(scanner.next());
+		System.out.print("\n");
+		
+		for (int i=0; i < repeat; i++) {
+			System.out.print("원하는 month를 입력하세요. : ");
+			int month = Integer.parseInt(scanner.next());
+			System.out.printf("\n" + "month : %d, # of days : %d", month, maxDaysofMonth(month));
+			System.out.print("\n\n");
+		}
+		System.out.print("The End");
 		scanner.close();
 	}
 }
