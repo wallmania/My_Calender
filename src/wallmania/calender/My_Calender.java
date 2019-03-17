@@ -92,7 +92,7 @@ public class My_Calender {
 		System.out.print("\n");		
 		for (int i=7-weekday+1; i<= maxDay; i++) {
 			System.out.printf("%2d ", i);
-			if (i % 7 == weekday) {
+			if (i % 7 == 7 - weekday) {
 				System.out.print("\n");
 			}
 		}
