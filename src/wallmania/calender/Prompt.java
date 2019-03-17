@@ -8,12 +8,18 @@ public class Prompt {
 	
 	public void runPrompt() {
 		
+		// 사용하지 못한 이유를 알아야 한다. 
+		// My_Calender cal = new My_Calender();
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("\n");
 		
 		int month = 1;
+		int year = 1950;
 		while (true) {
-			System.out.print("원하는 month를 입력하세요.\n");
+			System.out.print("year 입력하세요.\n");
+			System.out.print(PROMPT);
+			year = Integer.parseInt(scanner.next());
+			System.out.print("month 입력하세요.\n");
 			System.out.print(PROMPT);
 			month = Integer.parseInt(scanner.next());
 			if (month == -1) {
@@ -25,7 +31,7 @@ public class Prompt {
 				System.out.print("\n" + "month should be less than or equal to 12\n\n");
 				continue;
 			} else {
-				My_Calender.printSampleCalender(2019, month);
+				My_Calender.printSampleCalender(year, month);
 				System.out.print("\n\n");
 			}
 		}
