@@ -1,7 +1,6 @@
 package wallmania.calender;
 
 import java.util.Scanner;
-import wallmania.calender.My_Calender;
 
 public class Prompt {
 	
@@ -10,6 +9,7 @@ public class Prompt {
 	public void runPrompt() {
 		
 		// 사용하지 못한 이유를 알아야 한다. -> My_Calender cal = new My_Calender();
+		My_Calender cal = new My_Calender();
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("\n");
 		
@@ -37,7 +37,7 @@ public class Prompt {
 				System.out.print("\n" + "month should be less than or equal to 12\n\n");
 				continue;
 			} else {
-				My_Calender.printCalender(year, month);
+				cal.printCalender(year, month);
 				System.out.print("\n\n");
 			}
 		}
