@@ -1,7 +1,30 @@
 package wallmania.calender;
 
+import java.util.Scanner;
+
 public class My_Calender {
-	public static void main(String[] args) {
+	// 어떠한 로직이든 함수로 만들어주면 좋다. 
+	public static int maxDaysofMonth(int month) {
+		
+		int day;
+		switch(month) {
+			case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+				day = 31;
+				break;
+			case 4: case 6: case 9: case 11:
+				day = 30;
+				break;
+			case 2:
+				day = 28;
+				break;
+			default:
+				day = 0;
+				break;
+		}
+		return day;
+	}
+	
+	public static void printSampleCalender() {
 		System.out.println("일  월  화  수  목  금  토");
 		System.out.println("--------------------");
 		System.out.println(" 1  2  3  4  5  6  7");
@@ -9,5 +32,22 @@ public class My_Calender {
 		System.out.println("15 16 17 18 19 20 21");
 		System.out.println("22 23 24 25 26 27 28");
 	}
-
+	
+	public static void main(String[] args) {
+		
+		printSampleCalender();
+		
+		// 입력 받은 월의 최대 일수 구하기. 
+		// import 자동 생성 단축키는 cmd + shift + m
+		
+		int month;
+		System.out.println("\n");
+		System.out.print("원하는 month를 입력하세요. : ");
+		Scanner scanner = new Scanner(System.in);
+		month = Integer.parseInt(scanner.next());
+		
+		System.out.println("");
+		System.out.printf("month : %d, # of days : %d", month, maxDaysofMonth(month));
+		scanner.close();
+	}
 }
