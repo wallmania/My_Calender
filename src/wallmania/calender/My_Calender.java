@@ -1,7 +1,10 @@
+// import 자동 생성 단축키 : cmd + shift + m
+// 자동 들여쓰기 정리 단축키 : cmd + shift + f
+// git staging 찾기 : Window -> Show View -> Other -> git staging
+
 package wallmania.calender;
 
 public class My_Calender {
-	
 	// 윤년이면 2월 29까지, 평년이면 2월 28일까지  
 	public static int getMaxDayofMonth(int month, int year) {
 
@@ -42,10 +45,10 @@ public class My_Calender {
 	}
 	
 	public static int getWeekDay(int year, int month, int day) {
-		// Standard Year, Month, Day
-		int syear = 1970, smonth = 1, sday = 1, sweekday = 4; // Thursday (1970.01.01)
+		// Standard Year, Month, Day -> syear(1970), smonth(1), sday(1), sweekday(4)
+		int syear = 1970, sweekday = 4; // Thursday (1970.01.01)
 		
-		// Check Gap Between Year (Now) and syear
+		// Get # of days b/w syear and year
 		int count = 0;
 		for (int i=syear; i < year; i++) {
 			int delta = 0;
@@ -56,12 +59,12 @@ public class My_Calender {
 			}
 			count += delta;
 		}
-		// Check Gap of Month
+		// Get # of days b/w 1 and month
 		for (int j=1; j < month; j++) {
 			int delta = getMaxDayofMonth(j, year);
 			count += delta;
 		}
-		// Check Gap of Day
+		// Get # of days b/w 1 and day
 		count += day - 1;
 		
 		int weekday = (sweekday + count % 7) % 7; 
@@ -69,10 +72,6 @@ public class My_Calender {
 		return weekday;
 	}
 	
-	// import 자동 생성 단축키 : cmd + shift + m
-	// 자동 들여쓰기 정리 단축키 : cmd + shift + f
-	// git staging 찾기 : Window -> Show View -> Other -> git staging
-
 	public static void printCalender(int year, int month) {
 		System.out.printf("\n  <<%4d년 %3d월>>\n", year, month);
 		System.out.println("Su Mo Tu We Th Fr Sa");
@@ -84,19 +83,17 @@ public class My_Calender {
 			System.out.print("   ");
 		}
 		int maxDay = getMaxDayofMonth(month, year);
-		
 		// get second line 
 		for (int i=1; i<= 7-weekday; i++) {
 			System.out.printf("%2d ", i);
 		}
 		System.out.print("\n");		
+		// Get 나머지 line
 		for (int i=7-weekday+1; i<= maxDay; i++) {
 			System.out.printf("%2d ", i);
-			if (i % 7 == 7 - weekday) {
+			if (i % 7 == ((7 - weekday) % 7)) {
 				System.out.print("\n");
 			}
 		}
 	}
-	
-	
 }
