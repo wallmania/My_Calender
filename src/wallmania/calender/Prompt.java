@@ -30,7 +30,7 @@ public class Prompt {
 			}
 		}
 
-		System.out.print("\n\nThe End");
+		System.out.print("\nThe End");
 		scanner.close();
 	}
 	
